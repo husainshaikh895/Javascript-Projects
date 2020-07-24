@@ -1,0 +1,36 @@
+* {
+  margin: 10px;
+  overflow: hidden;
+  background-color: #112222;
+  cursor: crosshair;
+}
+.main {
+  background-color: #112222;
+  color: #0b7419;
+  font-size: 4em;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+    transform: rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+  }
+}

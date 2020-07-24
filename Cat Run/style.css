@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body {
+}
+#game {
+  height: 100vh;
+  width: 100vw;
+}
+#cloud1 {
+  background-image: url("cloud.png");
+  margin-top: 5px;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 330px;
+  height: 150px;
+  transform: scale(0.6);
+  animation: goleft 10s linear infinite;
+}
+#cloud2 {
+  background-image: url("cloud.png");
+  margin-top: 15px;
+  position: absolute;
+  background-repeat: no-repeat;
+  transform: scale(0.5);
+  width: 330px;
+  height: 150px;
+  animation: goleft 8s linear infinite;
+}
+
+#sun {
+  background-image: url("sun.gif");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  transform: scale(0.5);
+  top: -100px;
+  left: 700px;
+}
+
+#score {
+  position: absolute;
+  left: 100px;
+  top: 20px;
+}
+#hiscore {
+  position: absolute;
+  right: 100px;
+  top: 20px;
+}
+
+#character {
+  background-image: url("cat8bit.gif");
+  position: absolute;
+  top: 50vh;
+  height: 200px;
+  width: 200px;
+  z-index: 1;
+  transition: 0.2s;
+}
+.jumping {
+  animation: jump 1s ease-out 1;
+}
+.dead {
+  animation: dead_animation 1s;
+}
+
+#block {
+  background-image: url("dog8bit.gif");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 50vh;
+  transform: scale(0.8);
+  z-index: 1;
+  animation: goleft 3s linear infinite;
+}
+
+@keyframes goleft {
+  0% {
+    left: 1500;
+  }
+  100% {
+    left: -500;
+  }
+}
+
+#ground {
+  position: absolute;
+  top: 60vh;
+  background-color: greenyellow;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes jump {
+  50% {
+    top: 20vh;
+    transform: rotateZ(-15deg);
+  }
+  70% {
+    top: 20vh;
+  }
+  100% {
+  }
+}
+@keyframes dead_animation {
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
